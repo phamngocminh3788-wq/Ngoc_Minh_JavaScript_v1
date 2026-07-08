@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ngọc Minh</title>
+    <style>
+        /* CSS mặc định  */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .intro-header {
+            margin-bottom: 20px;
+        }
+
+        /* Khung hiển thị lớn theo yêu cầu của bài tập Coursera */
+        #image {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            border: 4px dashed #0056d2;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: background-image 0.3s ease, color 0.3s ease;
+        }
+
+        /* Phần hiển thị hình thể thao  */
+        .sports-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .sport-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sport-img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        /* Thêm hiệu ứng hover nhẹ cho các ảnh nhỏ */
+        .sport-img:hover {
+            border-color: #0056d2;
+        }
+
+        /* Ô nhập câu hỏi */
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #0056d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #003d99;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #0056d2;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="intro-header">
+        <h1>Xin chào các bạn, mình là Ngọc Minh</h1>
+        <p>Mình sinh năm 2007 và đang sống tại TPHCM</p>
+    </div>
+
+    <section>
+        <p><em>Đây là một bài tập về thiết kế web trên Coursera.</em></p>
+        <p>"Mình tạo trang web nhỏ này để tự giới thiệu bản thân với mọi người"</p>
+        
+        <h2>Một số thông tin cá nhân</h2>
+        <p>Mình là một sinh viên năm nhất của trường Đại Học FPT.</p>
+        <p>Mình đang học chuyên ngành Kỹ Thuật Phần Mềm và có đam mê với lĩnh vực trí tuệ nhân tạo và phát triển phần mềm.</p>
+        <p>Trong thời gian học tập, mình đã tham gia vào nhiều dự án và được hỗ trợ rất nhiều về lĩnh vực chuyên ngành, điều này giúp mình phát triển kỹ năng lập trình và làm việc nhóm.</p>
+    </section>
+
+    <section>
+        <h2>Một số sở thích cá nhân</h2>
+        <ul>
+            <li>Đi ăn</li>
+            <li>Chơi game</li>
+            <li>Thể thao (bóng đá, bóng bàn, pickleball)</li>
+        </ul>
+
+        <div id="image">
+            Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.
+        </div>
+
+        <div class="sports-grid">
+            <div class="sport-item">
+                <img class="sport-img" 
+                     src="https://n7media.coolmate.me/image/March2025/bong-da-la-mon-the-thao-dong-doi_82.jpg" 
+                     alt="Bóng đá" 
+                     onmouseover="upDate(this)" 
+                     onmouseleave="undo()">
+                <p>Bóng đá</p>
+            </div>
+            <div class="sport-item">
+                <img class="sport-img" 
+                     src="https://thethaothienlong.vn/wp-content/uploads/2022/08/cac-loai-bong-ban-1.jpg" 
+                     alt="Bóng bàn" 
+                     onmouseover="upDate(this)" 
+                     onmouseleave="undo()">
+                <p>Bóng bàn</p>
+            </div>
+            <div class="sport-item">
+                <img class="sport-img" 
+                     src="https://foxnews.com/content/uploads/2024/07/pickleball-paddle-court.jpg" 
+                     alt="Pickleball" 
+                     onmouseover="upDate(this)" 
+                     onmouseleave="undo()">
+                <p>Pickleball</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Thông tin liên lạc cá nhân</h2>
+        <p><strong>Số điện thoại:</strong> 0901234567</p>
+        <p><strong>Email:</strong> abcxyz@gmail.com</p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/pham.minh.243906" target="_blank">Phạm Minh</a></p>
+
+        <h2>Bạn còn có câu hỏi gì về mình không?</h2>
+        <form onsubmit="alert('Cảm ơn bạn đã đặt câu hỏi!'); return false;">
+            <textarea placeholder="Nhập câu hỏi của bạn vào đây..."></textarea>
+            <br>
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
+
+    <script>
+        // Yêu cầu số 3: Điền mã cho hàm upDate
+        function upDate(previewPic) {
+            // a. console.log() kiểm tra xem sự kiện có kích hoạt không
+            console.log("Sự kiện onmouseover đã kích hoạt thành công!");
+            
+            // b. console.log kiểm tra biến previewPic (alt và src)
+            console.log("Alt text của ảnh: " + previewPic.alt);
+            console.log("Source URL của ảnh: " + previewPic.src);
+            
+            // Lấy phần tử div hiển thị có id là "image"
+            let displayDiv = document.getElementById("image");
+            
+            // c. Thay đổi văn bản của phần tử với id của hình ảnh (sử dụng alt)
+            displayDiv.innerHTML = previewPic.alt;
+            
+            // e. Thay đổi hình nền của phần tử với id của hình ảnh (sử dụng src)
+            displayDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+        }
+
+        // Yêu cầu số 4: Điền mã cho chức năng hoàn tác
+        function undo() {
+            // Lấy phần tử div hiển thị có id là "image"
+            let displayDiv = document.getElementById("image");
+            
+            // a. Cập nhật url cho hình nền trở lại giá trị ban đầu: url('')
+            displayDiv.style.backgroundImage = "url('')";
+            
+            // b. Cập nhật văn bản trở lại văn bản gốc ban đầu
+            displayDiv.innerHTML = "Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.";
+        }
+    </script>
+
+</body>
+</html>
